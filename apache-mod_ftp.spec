@@ -1,4 +1,4 @@
-%define snap r668783
+%define snap r719642
 
 #Module-Specific definitions
 %define mod_name mod_ftp
@@ -7,8 +7,8 @@
 
 Summary:	Apache module for FTP support
 Name:		apache-%{mod_name}
-Version:	0.9.2
-Release: 	%mkrel 0.%{snap}.2
+Version:	0.9.3
+Release: 	%mkrel 0.%{snap}.1
 Group:		System/Servers
 License:	Apache License
 URL:		http://httpd.apache.org/mod_ftp/
@@ -105,4 +105,3 @@ rm -rf %{buildroot}
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/modules.d/%{mod_conf}
 %attr(0755,root,root) %{_libdir}/apache-extramodules/*.so
 %dir /var/www/ftp
-
