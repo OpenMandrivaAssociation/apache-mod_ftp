@@ -1,5 +1,3 @@
-%define snap r719642
-
 #Module-Specific definitions
 %define mod_name mod_ftp
 %define mod_conf B41_%{mod_name}.conf
@@ -7,12 +5,12 @@
 
 Summary:	Apache module for FTP support
 Name:		apache-%{mod_name}
-Version:	0.9.3
-Release: 	%mkrel 0.%{snap}.2
+Version:	0.9.4
+Release: 	%mkrel 1
 Group:		System/Servers
 License:	Apache License
 URL:		http://httpd.apache.org/mod_ftp/
-Source0:	%{mod_name}-%{version}-%{snap}.tar.gz
+Source0:	http://httpd.apache.org/dev/dist/mod_ftp/httpd-%{mod_name}-%{version}.tar.gz
 Source1:	%{mod_conf}
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
@@ -33,7 +31,7 @@ retrieval and STOR/APPE upload, using the same user/permissions model as httpd
 
 %prep
 
-%setup -q -n %{mod_name}
+%setup -q -n httpd-%{mod_name}-%{version}
 
 for i in `find . -type d -name .svn`; do
     if [ -e "$i" ]; then rm -rf $i; fi >&/dev/null
