@@ -5,13 +5,14 @@
 
 Summary:	Apache module for FTP support
 Name:		apache-%{mod_name}
-Version:	0.9.4
-Release: 	%mkrel 2
+Version:	0.9.6
+Release: 	%mkrel 0.1
 Group:		System/Servers
 License:	Apache License
 URL:		http://httpd.apache.org/mod_ftp/
-Source0:	http://httpd.apache.org/dev/dist/mod_ftp/httpd-%{mod_name}-%{version}.tar.gz
-Source1:	%{mod_conf}
+Source0:	http://httpd.apache.org/dev/dist/mod_ftp/mod_ftp-%{version}.tar.gz
+Source1:	http://httpd.apache.org/dev/dist/mod_ftp/mod_ftp-%{version}.tar.gz.asc
+Source2:	%{mod_conf}
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):	apache-conf >= 2.2.0
@@ -31,13 +32,13 @@ retrieval and STOR/APPE upload, using the same user/permissions model as httpd
 
 %prep
 
-%setup -q -n httpd-%{mod_name}-%{version}
+%setup -q -n %{mod_name}-%{version}
 
 for i in `find . -type d -name .svn`; do
     if [ -e "$i" ]; then rm -rf $i; fi >&/dev/null
 done
 
-cp %{SOURCE1} %{mod_conf}
+cp %{SOURCE2} %{mod_conf}
 
 # fix defaults
 perl -pi -e "s|\@\@FTPPort\@\@|2121|g" %{mod_conf}
