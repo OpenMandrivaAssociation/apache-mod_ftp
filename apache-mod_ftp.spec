@@ -5,8 +5,8 @@
 
 Summary:	Apache module for FTP support
 Name:		apache-%{mod_name}
-Version:	0.9.6
-Release: 	%mkrel 0.2
+Version:	1.0.0
+Release: 	%mkrel 0.1
 Group:		System/Servers
 License:	Apache License
 URL:		http://httpd.apache.org/mod_ftp/
@@ -32,7 +32,7 @@ retrieval and STOR/APPE upload, using the same user/permissions model as httpd
 
 %prep
 
-%setup -q -n %{mod_name}-%{version}
+%setup -q -n %{mod_name}
 
 for i in `find . -type d -name .svn`; do
     if [ -e "$i" ]; then rm -rf $i; fi >&/dev/null
