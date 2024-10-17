@@ -9,7 +9,7 @@ Version:	1.0.0
 Release: 	%mkrel 0.4
 Group:		System/Servers
 License:	Apache License
-URL:		http://httpd.apache.org/mod_ftp/
+URL:		https://httpd.apache.org/mod_ftp/
 Source0:	http://httpd.apache.org/dev/dist/mod_ftp/mod_ftp-%{version}.tar.gz
 Source1:	http://httpd.apache.org/dev/dist/mod_ftp/mod_ftp-%{version}.tar.gz.asc
 Source2:	%{mod_conf}
