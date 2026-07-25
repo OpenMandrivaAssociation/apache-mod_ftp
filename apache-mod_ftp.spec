@@ -6,7 +6,7 @@
 Summary:	Apache module for FTP support
 Name:		apache-%{mod_name}
 Version:	1.0.0
-Release: 	%mkrel 0.4
+Release: 	1
 Group:		System/Servers
 License:	Apache License
 URL:		https://httpd.apache.org/mod_ftp/
